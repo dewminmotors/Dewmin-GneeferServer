@@ -1,0 +1,162 @@
+1) Item model endpoint description
+
+POST : http://localhost:8096/api/item/
+{
+    
+    "name": "Item4",
+    "catName": "Cat4",
+	  "brandName" : "Brand4",
+    "tag": ["fruit"],
+    "price": 1900,
+	  "cost" : 880
+}
+
+
+GET: Get all items -  http://localhost:8096/api/item/all
+GET: Get all active items -  http://localhost:8096/api/item/
+
+
+UPDATE (True) : Update by iId : http://localhost:8096/api/item/6120e33c386d344188934927
+
+{
+    
+    "name": "Item4",
+    "catName": "Cat4",
+	  "brandName" : "Brand4",
+    "tag": ["Vege"],
+    "price": 1900,
+	  "cost" : 880
+}
+
+
+DELETE(True) : http://localhost:8096/api/item/6120e315386d344188934923
+
+
+
+mongoose
+mongoose-morgan
+axios
+express
+mongoose-auto-increment
+
+
+
+2) Stock model description endpoint
+
+POST : http://localhost:8096/api/stock/   //Dulan, we don't want this endpoint. This is just for the testing purposes
+                                          //Stock creation is automated
+       { branchCode: String,
+        itemId: Number
+        cost: Number
+        name: String
+        currentStock: Number,
+        stockVal: Number,
+        available: Boolean,}
+
+
+GET stocks through branch code and item id : http://localhost:8096/api/stock/stock/:branchCode/:itemId"
+
+GET stocks through branch code :  http://localhost:8096/api/stock/branchCode/:bc
+
+GET  stocks through category :  http://localhost:8096/api/stock/category/:category // Ignore this endpoint
+
+GET stocks throgh branch and cat :  http://localhost:8096/api/stock/category/branch/:category/:branch  //ignore this endpoint also
+
+GET stocks through item id : http://localhost:8096/api/stock/itemId/:itemId
+
+UPDATE  stocks through item id : http://localhost:8096/api/stock/stocktransfer/:sentbranchCode/:receivedbranchCode/:itemId/:qty 
+//for this there is no JSON file
+
+
+PUT update stocks through stocks id : http://localhost:8096/api/stock/update/:branchCode/:itemId/:qty  
+
+
+GET retrive stocks by stocks id : http://localhost:8096/api/stock/stockId/:_id //meka mathak karala kohe hari thenakata dapan ah
+
+
+3) User
+
+SIGN IN : http://localhost:8096/api/auth/signin //Meka weda
+
+{
+    "username":"admin",
+    "password":"1234"
+}
+
+4) REPORT    //Meke serama thama apita test karanna ba. Due to lack of data in DB
+
+GET : Sales by branch  : http://localhost:8096/api/report/sales/branch/timerange/:startDate/:endDate
+GET : Sales by category : http://localhost:8096/api/report/sales/category/timerange/:startDate/:endDate
+GET : Revenue by branch : http://localhost:8096/api/report/revenue/branch/timerange/:dateTimeBefore/:dateTimeAfter
+GET : Revenue by category : http://localhost:8096/api/report/revenue/category/timerange/:startDate/:endDate
+GET : Purchase details: http://localhost:8096/api/report/details/timerange/:startDate/:endDate
+GET : Purchase details by category : http://localhost:8096/api/report/details/category/timerange/:categoryName/:startDate/:endDate
+GET : Purchase details by branch : http://localhost:8096/api/report/details/branch/timerange/:branchCode/:startDate/:endDate
+GET : Purchase details by category and branch : http://localhost:8096/api/report/details/branch/category/timerange/:branchCode/:categoryName/:startDate/:endDate
+GET : Category by branch : http://localhost:8096/api/report/stock/branch/:branchCode/
+GET : Sales by item : http://localhost:8096/api/report/salesCount/item/:item
+
+
+
+5) Invoice 
+
+POST : New invoice : http://localhost:8096/api/invoice/
+  {
+    invId: String,
+    dateTime: Date,
+    username: String,
+    payMethod: String,
+    totDiscount: Number,
+    totValue: Number,
+    branchCode: String,
+    totalItems: Number,
+    _active: Boolean,
+    purchases: []
+  }
+
+//Example Json
+{
+    "invId" : "KUL-005",
+    "dateTime" : "2021-09-11",
+    "username" : "user",
+    "payMethod" : "CASH",
+    "totDiscount" : 5000,
+    "totValue" : 100000,
+    "customer" : "0774662797",
+    "branchCode" : "KUL",
+    "totalItems" : 9,
+    "purchases": [{
+        "itemId" : "613c9f488e8262e10d31901c",
+        "unitPrice" : 100000,
+        "disc" :5000,
+        "discPrice" : 95000,
+        "qty" : 2,
+        "brandName" :"ABC"
+    },
+								 {
+        "itemId" : "613c9f4e8e8262e10d319032",
+        "unitPrice" : 100000,
+        "disc" :5000,
+        "discPrice" : 95000,
+        "qty" : 2,
+        "brandName" :"ABC"
+    }]
+}
+
+
+
+
+GET : Retrieve Invoices :  http://localhost:8096/api/invoice/
+
+6) Purchase
+
+{
+        "itemId" : String,
+        "unitPrice" : Number,
+        "disc" :Number,
+        "discPrice" : Number,
+        "qty" : Number,
+        "brandName" :"String"
+}
+
+GET : Retrive Purchases :  http://localhost:8096/api/purchase/

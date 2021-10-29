@@ -1,0 +1,36 @@
+{
+    "name": "gneefer-server",
+    "version": "1.0.0",
+    "description": "Gneefer is a suite of business management software tools including, for example, CRM, e-commerce, billing, accounting, manufacturing, warehouse, project management, and inventory management.",
+    "main": "server.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TharinduRewatha/Gneefer-server.git"
+    },
+    "author": "T/D",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/TharinduRewatha/Gneefer-server/issues"
+    },
+    "homepage": "https://github.com/TharinduRewatha/Gneefer-server#readme",
+    "dependencies": {
+        "-": "0.0.1",
+        "axios": "^0.21.1",
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.0.4",
+        "mongoose-auto-increment": "^5.0.1",
+        "mongoose-morgan": "^1.0.17",
+        "nodemon": "^2.0.12",
+        "vercel": "^23.1.2"
+    }
+}
