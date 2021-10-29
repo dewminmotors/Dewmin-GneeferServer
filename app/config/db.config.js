@@ -1,12 +1,12 @@
 module.exports = {
     url: "mongodb+srv://dewmin:1234@dewmindb.whjvz.mongodb.net/test",
 
-    stockUrl: "https://gneeferserver.herokuapp.com/api/stock/",
+    stockUrl: "https://dewmin-gneeferserver.herokuapp.com/api/stock/",
 
 
-    stocLogkUrl: "https://gneeferserver.herokuapp.com/api/stockLog/",
+    stocLogkUrl: "https://dewmin-gneeferserver.herokuapp.com/api/stockLog/",
 
-    purchaseUrl: "https://gneeferserver.herokuapp.com/api/purchase/",
+    purchaseUrl: "https://dewmin-gneeferserver.herokuapp.com/api/purchase/",
 
-    ItemNameUrl: "https://gneeferserver.herokuapp.com/api/item/namebyid"
+    ItemNameUrl: "https://dewmin-gneeferserver.herokuapp.com/api/item/namebyid"
 }
