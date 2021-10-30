@@ -17,6 +17,7 @@ exports.create = (req, res) => {
         disValue: req.body.disValue,
         price: req.body.price,
         cost: req.body.cost,
+        itemId: req.body.itemId,
         _active: true,
         //stocks: stk
 
