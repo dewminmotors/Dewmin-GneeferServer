@@ -13,7 +13,7 @@ module.exports = (mongoose) => {
         name: String,
         itemId: Number,
         catName: { type: mongoose.Schema.Types.Mixed, ref: 'Category' },
-        brandName: { type: mongoose.Schema.Types.Mixed, ref: 'Brand' },
+        brandName: String,
         sfName: String,
         tag: [String],
         cost: Number,

@@ -10,7 +10,7 @@ module.exports = (mongoose) => {
         itemId: String,
         dateTime: Date,
         _active: Boolean,
-        brandName: String,
+        brandName: { type: mongoose.Schema.Types.Mixed, ref: 'Item' },
         branchCode: String,
         payMethod: ["CASH", "VISA", "MASTER_CARD", "AMEX", "ONLINE"]
 

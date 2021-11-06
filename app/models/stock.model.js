@@ -1,6 +1,10 @@
 module.exports = (mongoose) => {
     var schema = mongoose.Schema({
         branchCode: String,
+        iId: {
+            type: mongoose.Schema.Types.Mixed,
+            ref: "Item"
+        },
         itemId: {
             type: mongoose.Schema.Types.Mixed,
             ref: "Item"

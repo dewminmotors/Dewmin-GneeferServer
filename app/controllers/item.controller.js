@@ -32,7 +32,8 @@ exports.create = (req, res) => {
                         console.log(itemData.itemId)
                         const stock = new Stock({
                             branchCode: branch.branchCode,
-                            itemId: itemData.id,
+                            iId: itemData.id,
+                            itemId: itemData.itemId,
                             cost: itemData.cost,
                             name: itemData.name,
                             brandName: itemData.brandName,

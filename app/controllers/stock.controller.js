@@ -13,6 +13,7 @@ exports.create = (req, res) => {
     }
     const stock = new Stock({
         branchCode: req.body.branchCode,
+        iId: req.body.iId,
         itemId: req.body.itemId,
         cost: req.body.cost,
         price: req.body.price,
