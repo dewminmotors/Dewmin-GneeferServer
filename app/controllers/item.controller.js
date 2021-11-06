@@ -17,7 +17,7 @@ exports.create = (req, res) => {
         disValue: req.body.disValue,
         price: req.body.price,
         cost: req.body.cost,
-        itemId: req.body.itemId,
+        barcodeId: req.body.barcodeId,
         _active: true,
         //stocks: stk
 
@@ -32,8 +32,8 @@ exports.create = (req, res) => {
                         console.log(itemData.itemId)
                         const stock = new Stock({
                             branchCode: branch.branchCode,
-                            iId: itemData.id,
-                            itemId: itemData.itemId,
+                            itemId: itemData.id,
+                            barcodeId: itemData.barcodeId,
                             cost: itemData.cost,
                             name: itemData.name,
                             brandName: itemData.brandName,

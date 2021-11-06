@@ -11,7 +11,7 @@ module.exports = (mongoose) => {
     var schema = mongoose.Schema({
 
         name: String,
-        itemId: Number,
+        barcodeId: Number,
         catName: { type: mongoose.Schema.Types.Mixed, ref: 'Category' },
         brandName: String,
         sfName: String,
@@ -28,7 +28,7 @@ module.exports = (mongoose) => {
 
     schema.plugin(autoIncrement.plugin, {
         model: 'Item',
-        field: 'itemId',
+        field: 'barcodeId',
         startAt: 10000,
         incrementBy: 1
     });
