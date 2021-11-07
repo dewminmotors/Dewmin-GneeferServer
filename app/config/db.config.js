@@ -1,5 +1,5 @@
 module.exports = {
-    url: "mongodb+srv://dewmin:1234@dewmindb.whjvz.mongodb.net/test",
+    url: "mongodb+srv://dewmin:1234@dewmindb.whjvz.mongodb.net/production",
 
     stockUrl: "https://dewmin-gneeferserver.herokuapp.com/api/stock/",
 
